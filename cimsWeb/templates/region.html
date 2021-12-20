@@ -9,14 +9,6 @@
     <h1>광역시,도,특별자치시,특별자치도 사회적 거리두기 단계</h1>
     <hr style="border: solid 10px black;">
     <br>
-    {% for level1 in level1.all %}
-        <hr align="left" style="border: solid 1px black; width: 30%;">
-        <h2>{{ level1.level }}</h2>
-        <p>{{ level1.criterion }}</p>
-        <p>{{ level1.privateMeetingRule }}</p>
-        <p>{{ level1.festivalRule }}</p>
-        <p>{{ level1.rallyRule }}</p>
-    {% endfor %}
     {% for rg in rg.all %}
         <hr align="left" style="border: solid 1px black; width: 30%;">
         <h2>{{ rg.region }}</h2>
