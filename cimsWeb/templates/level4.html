@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>사회적거리두기 4단계 안내</title>
+</head>
+<body>
+<h1>사회적 거리두기 단계별 안내</h1>
+<ul>
+    <li><a href="level1">1단계</a></li>
+    <li><a href="level2">2단계</a></li>
+    <li><a href="level3">3단계</a></li>
+    <li><a href="level4">4단계</a></li>
+</ul>
+<h1>사회적거리두기 4단계 안내</h1>
+<table>
+    <tr>
+        <th>기준</th>
+        <td>
+            <ul>
+                {% for level4 in level4.all %}
+                {% if level4.level == '4' %}
+                    <p>{{ level4.criterion }}</p>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>사적모임수칙</th>
+        <td>
+            <ul>
+                {% for level4 in level4.all %}
+                {% if level4.level == '4' %}
+                    <p>{{ level4.privateMeetingRule }}</p>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>행사수칙</th>
+        <td>
+            <ul>
+                {% for level4 in level4.all %}
+                {% if level4.level == '4' %}
+                    <p>{{ level4.festivalRule }}</p>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>집회수칙</th>
+        <td>
+            <ul>
+                {% for level4 in level4.all %}
+                {% if level4.level == '4' %}
+                    <p>{{ level4.rallyRule }}</p>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
