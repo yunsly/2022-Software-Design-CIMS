@@ -36,7 +36,6 @@ def getCoronicOfStatusData():
     for root_e in root.iter('incDec'):
         todayCoronic.append(int(root_e.text))
 
-    region.reverse()
     todayCoronic.reverse()
     
     yesterday = (date.today() - timedelta(1)).strftime('%Y.%m.%d')
