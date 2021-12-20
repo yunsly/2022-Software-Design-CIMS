@@ -23,6 +23,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -30,14 +31,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: #fff;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .header {
   padding-left: 130vh;
   padding-right: 20vh;
   width: 100%;
-  height: 10vh;
   margin: 0;
   display: -ms-grid;
   display: grid;
@@ -173,6 +173,43 @@ body {
 
 .content {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .date-criterion {
+  font-family: "IBMPlexSansKR-Regular";
+  font-size: 20px;
+  margin-top: 53%;
+}
+
+.content .coronicMatrix {
+  margin-top: 5%;
+  padding-bottom: 5%;
+  font-family: "IBMPlexSansKR-Regular";
+  font-size: 20px;
+  text-align: center;
+}
+
+.content .coronicMatrix table {
+  border-top: 1px solid #6495ED;
+  border-collapse: collapse;
+}
+
+.content .coronicMatrix table th, .content .coronicMatrix table td {
+  border-bottom: 1px solid #6495ED;
+  padding: 10px;
 }
 /*# sourceMappingURL=localCoronic.css.map */
