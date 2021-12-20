@@ -1,69 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>사회적거리두기 1단계 안내</title>
-
-
+    <title>CIMS: Covid-19 Information Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/stageInfo.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
 </head>
 <body>
-<h1>사회적 거리두기 단계별 안내</h1>
-<ul>
-    <li><a href="level1">1단계</a></li>
-    <li><a href="level2">2단계</a></li>
-    <li><a href="level3">3단계</a></li>
-    <li><a href="level4">4단계</a></li>
-</ul>
-<h1>사회적거리두기 1단계 안내</h1>
-<table>
-    <tr>
-        <th>기준</th>
-        <td>
-            <ul>
-                {% for level1 in level1.all %}
-                {% if level1.level == '1' %}
-                    <p>{{ level1.criterion }}</p>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>사적모임수칙</th>
-        <td>
-            <ul>
-                {% for level1 in level1.all %}
-                {% if level1.level == '1' %}
-                    <p>{{ level1.privateMeetingRule }}</p>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>행사수칙</th>
-        <td>
-            <ul>
-                {% for level1 in level1.all %}
-                {% if level1.level == '1' %}
-                    <p>{{ level1.festivalRule }}</p>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>집회수칙</th>
-        <td>
-            <ul>
-                {% for level1 in level1.all %}
-                {% if level1.level == '1' %}
-                    <p>{{ level1.rallyRule }}</p>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </td>
-    </tr>
-</table>
+    <div class ="header">
+        <ul>
+            <a href="/startpage" style="text-decoration:none" ><li class="headr-menu">HOME</li></ㅁ>
+            <a href="/mypage" style="text-decoration:none" ><li class="headr-menu">Mypage</li></a>
+            <a href="/" style="text-decoration:none" ><li class="headr-menu">Logout</li></a>
+        </ul>
+    </div>
+    <div class="hero" style="max-height: 700px; padding-top: 10px; padding-bottom: 40px; margin: 0px auto; text-align: center;" >
+        <svg width="80" height="60" viewBox="5 0 80 60">
+            <path class="wave" fill="none" stroke="#3456DA" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" $=1$=010.0" />
+        </svg>
+        <h4 class="animation-title bigTitle">CIMS</h4>
+    </div>
+
+
+    <div id="app">
+        <ul class="menu-container">
+            <a href="/localCoronic" style="text-decoration:none" ><li class="menu">지역별 확진자 수</li></a>
+            <a href="/stageInfo" style="text-decoration:none" ><li class="menu">사회적 거리두기 단계 안내</li></a>
+            <a href="/currentStage" style="text-decoration:none" ><li class="menu">지역별 사회적 거리두기 현황</li></a>
+            <div class="focus-el el--1"></div>
+            <div class="focus-el el--2"></div>
+        </ul>
+    </div>
+
+
+    <div class = "content">
+        <h1>사회적 거리두기 단계별 안내</h1>
+        <ul>
+            <li><a href="level1">1단계</a></li>
+            <li><a href="level2">2단계</a></li>
+            <li><a href="level3">3단계</a></li>
+            <li><a href="level4">4단계</a></li>
+        </ul>
+        <h1>사회적거리두기 2단계 안내</h1>
+        <table>
+            <tr>
+                <th>기준</th>
+                <td>
+                    <ul>
+                        {% for level1 in level1.all %}
+                        {% if level1.level == '1' %}
+                            <p>{{ level1.criterion }}</p>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>사적모임수칙</th>
+                <td>
+                    <ul>
+                        {% for level1 in level1.all %}
+                        {% if level1.level == '1' %}
+                            <p>{{ level1.privateMeetingRule }}</p>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>행사수칙</th>
+                <td>
+                    <ul>
+                        {% for level1 in level1.all %}
+                        {% if level1.level == '1' %}
+                            <p>{{ level1.festivalRule }}</p>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>집회수칙</th>
+                <td>
+                    <ul>
+                        {% for level1 in level1.all %}
+                        {% if level1.level == '1' %}
+                            <p>{{ level1.rallyRule }}</p>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+
 </body>
 </html>

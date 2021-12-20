@@ -12,37 +12,37 @@ from .models import CoronicStatusOfRegion, CoronicStatusOfKorea
 
 def region(req):
     rg = SocialDistanceLevelOfRegion.objects
-    return render(req, "region.html", {'rg': rg})
+    return render(req, 'region.html', {'rg': rg})
 
 
 def metroCity(req):
     mc = MetroCity.objects
-    return render(req, "region.html", {'mc': mc})
+    return render(req, 'region.html', {'mc': mc})
 
 
 def do(req):
     do = Do.objects
-    return render(req, "region.html", {'do': do})
+    return render(req, 'region.html', {'do': do})
 
 
 def selfGoverningDo(req):
     sgd = SelfGoverningDo.objects
-    return render(req, "region.html", {'sgd': sgd})
+    return render(req, 'region.html', {'sgd': sgd})
 
 
 def selfGoverningSi(req):
     sgs = SelfGoverningSi.objects
-    return render(req, "region.html", {'sgs': sgs})
+    return render(req, 'region.html', {'sgs': sgs})
 
 
 def si(req):
     si = Si.objects
-    return render(req, "region.html", {'si': si})
+    return render(req, 'region.html', {'si': si})
 
 
 def gun(req):
     gun = Gun.objects
-    return render(req, "region.html", {'gun': gun})
+    return render(req, 'region.html', {'gun': gun})
 
 
 def socialDistanceLevel(req):
