@@ -11,7 +11,7 @@
 <body>
     <div class ="header">
         <ul>
-            <a href="/startpage" style="text-decoration:none" ><li class="headr-menu">HOME</li></ㅁ>
+            <a href="/startpage" style="text-decoration:none" ><li class="headr-menu">HOME</li></a>
             <a href="/mypage" style="text-decoration:none" ><li class="headr-menu">Mypage</li></a>
             <a href="/" style="text-decoration:none" ><li class="headr-menu">Logout</li></a>
         </ul>
@@ -36,31 +36,35 @@
 
 
     <div class = "content">
-        {% for i in coronic %}
-        {% if i.region == 'Seoul' %}
-        {{i.year}}.{{i.month}}.{{i.day}} 기준 <br>
-        {% endif %}
-        {% endfor %}
 
-        <table class="localCoronic">
-            <thead>
-                <tr>
-                    <td>지역</td>
-                    <td>확진자수</td>
-                    <td>전날 대비 증감수</td>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in coronic %}
-                <tr>
-                    <td>{{i.region}}</td>
-                    <td>{{i.coronicCount}}</td>
-                    <td>{{i.coronicGap}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
+        <div class= "date-criterion" >
+            {% for i in coronic %}
+            {% if i.region == 'Seoul' %}
+            {{i.year}}.{{i.month}}.{{i.day}} 기준 <br>
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="coronicMatrix"> 
+            <table class="localCoronic">
+                <thead>
+                    <tr>
+                        <td>지역</td>
+                        <td>확진자수</td>
+                        <td>전날 대비 증감수</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in coronic %}
+                    <tr>
+                        <td>{{i.region}}</td>
+                        <td>{{i.coronicCount}}</td>
+                        <td>{{i.coronicGap}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>

@@ -36,14 +36,14 @@
     <div class = "content">
         {% for i in total %}
             <div id="total">
-            {{ i.coronicCount }}
+                <p class="date">{{ i.month }} 월&nbsp;&nbsp;&nbsp;{{ i.day }} 일</p>
+                <p class ="total">{{ i.coronicCount }}</p>    
             </div>
             <div id="gap">
-                ( {{ i.coronicGap }} )
+                <p class="m"> 전날 대비</p>
+                <p class="gap-num">{{ i.coronicGap }}&nbsp;명</p>
             </div>
-            <div id="date">
-                {{ i.year }}.{{ i.month }}.{{ i.day }} 기준
-            </div>
+
         {% endfor %}
     </div>
 
