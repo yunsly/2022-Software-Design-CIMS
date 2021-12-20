@@ -29,9 +29,8 @@ def getCoronicOfStatusData():
     root = ElementTree.fromstring(coronicStatus)
 
     # save region name
-    region = []
-    for root_e in root.iter('gubunEn'):
-        region.append(root_e.text)
+    region = ['Total', '서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기도', '강원도', '충청북도', '충청남도', '전라북도', '전라남도', '경상북도', '경상남도', '제주', '검역']
+    
     # save the number of Coronic
     todayCoronic = []
     for root_e in root.iter('incDec'):
