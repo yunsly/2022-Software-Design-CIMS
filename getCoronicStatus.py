@@ -76,6 +76,38 @@ def auto():
                 else:
                     CoronicStatusOfRegion(region=region[i], year=year, month=month, day=day, coronicCount=coronicCount[i], coronicGap=0).save()
     
+if __name__ == '__main__':
+        region, year, month, day, coronicCount = getCoronicOfStatusData()
+        for i in range(0, len(region)):
+            if region[i] == 'Total':
+                queryset = CoronicStatusOfKorea.objects.all()
+
+                if queryset.count():
+                    data = queryset.first()
+                    temp = data.coronicCount
+                    data.year = year
+                    data.month = month
+                    data.day = day
+                    data.coronicCount = coronicCount[i]
+                    data.coronicGap = coronicCount[i] - temp
+                    data.save()
+                else:
+                    CoronicStatusOfKorea(year=year, month=month, day=day, coronicCount=coronicCount[i], coronicGap=0).save()
+            else:    
+                queryset = CoronicStatusOfRegion.objects.all()
+                if queryset.count() == len(region) - 1:
+                    if queryset.get(region=region[i]):
+                        data = queryset.get(region=region[i])
+                        temp = data.coronicCount
+                        data.year = year
+                        data.month = month
+                        data.day = day
+                        data.coronicCount = coronicCount[i]
+                        data.coronicGap = coronicCount[i] - temp
+                        data.save()
+                else:
+                    CoronicStatusOfRegion(region=region[i], year=year, month=month, day=day, coronicCount=coronicCount[i], coronicGap=0).save()
+
 schedule.every().day.at("12:00").do(auto)
 
 while True:
