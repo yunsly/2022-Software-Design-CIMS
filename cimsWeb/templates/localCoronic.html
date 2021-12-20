@@ -59,7 +59,12 @@
                     <tr>
                         <td>{{i.region}}</td>
                         <td>{{i.coronicCount}}</td>
-                        <td>{{i.coronicGap}}</td>
+                        <td>
+                            {% if i.coronicGap >= 0%}
+                            +
+                            {% endif %}
+                            {{i.coronicGap}}
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
