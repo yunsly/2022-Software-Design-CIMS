@@ -41,7 +41,11 @@
             </div>
             <div id="gap">
                 <p class="m"> 전날 대비</p>
-                <p class="gap-num">{{ i.coronicGap }}&nbsp;명</p>
+                <p class="gap-num">
+                {% if i.coronicGap >= 0 %}
+                +
+                {% endif %}
+                {{ i.coronicGap }}&nbsp;명</p>
             </div>
 
         {% endfor %}
