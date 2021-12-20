@@ -13,7 +13,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cims.settings')
 # 이제 장고를 가져와 장고 프로젝트를 사용할 수 있도록 환경을 만듭니다.
 django.setup()
 
-from cimsWeb.models import CoronicStatusOfRegion, CoronicStatusOfKorea
+from coronicStatus.models import CoronicStatusOfRegion, CoronicStatusOfKorea
 
 def getCoronicOfStatusData():
     # get today's date
@@ -45,38 +45,6 @@ def getCoronicOfStatusData():
 
 def auto():
     if __name__ == '__main__':
-        region, year, month, day, coronicCount = getCoronicOfStatusData()
-        for i in range(0, len(region)):
-            if region[i] == 'Total':
-                queryset = CoronicStatusOfKorea.objects.all()
-
-                if queryset.count():
-                    data = queryset.first()
-                    temp = data.coronicCount
-                    data.year = year
-                    data.month = month
-                    data.day = day
-                    data.coronicCount = coronicCount[i]
-                    data.coronicGap = coronicCount[i] - temp
-                    data.save()
-                else:
-                    CoronicStatusOfKorea(year=year, month=month, day=day, coronicCount=coronicCount[i], coronicGap=0).save()
-            else:    
-                queryset = CoronicStatusOfRegion.objects.all()
-                if queryset.count() == len(region) - 1:
-                    if queryset.get(region=region[i]):
-                        data = queryset.get(region=region[i])
-                        temp = data.coronicCount
-                        data.year = year
-                        data.month = month
-                        data.day = day
-                        data.coronicCount = coronicCount[i]
-                        data.coronicGap = coronicCount[i] - temp
-                        data.save()
-                else:
-                    CoronicStatusOfRegion(region=region[i], year=year, month=month, day=day, coronicCount=coronicCount[i], coronicGap=0).save()
-    
-if __name__ == '__main__':
         region, year, month, day, coronicCount = getCoronicOfStatusData()
         for i in range(0, len(region)):
             if region[i] == 'Total':

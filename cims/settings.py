@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cimsWeb.apps.CimswebConfig',
+    'main.apps.MainConfig',
+    'coronicStatus.apps.CoronicstatusConfig',
+    'socialDistance.apps.SocialdistanceConfig',
 ]
 
 MIDDLEWARE = [
