@@ -12,7 +12,8 @@ from .models import CoronicStatusOfRegion, CoronicStatusOfKorea
 
 def region(req):
     rg = SocialDistanceLevelOfRegion.objects
-    return render(req, 'region.html', {'rg': rg})
+    return render(req, 'region'
+                       '.html', {'rg': rg})
 
 
 def metroCity(req):
