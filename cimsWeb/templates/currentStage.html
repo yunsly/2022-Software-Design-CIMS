@@ -36,42 +36,45 @@
 
 
     <div class = "content">
-
-        <br>
-        <h1>광역시,도,특별자치시,특별자치도 사회적 거리두기 단계</h1>
-
-        <br>
-        {% for rg in rg.all %}
-            <br>
-            <h2>{{ rg.region }}</h2>
-            <p>{{ rg.level }}</p>
-            <p>{{ rg.term }}</p>
-        {% endfor %}
-        {% for mc in mc.all %}
-            <br>
-            <h2>{{ mc.region }}</h2>
-            <p>{{ mc.level }}</p>
-            <p>{{ mc.term }}</p>
-        {% endfor %}
-        {% for do in do.all %}
-            <br>
-            <h2>{{ do.region }}</h2>
-            <p>{{ do.level }}</p>
-            <p>{{ do.term }}</p>
-        {% endfor %}
-        {% for sgd in sgd.all %}
-            <br>
-            <h2>{{ sgd.region }}</h2>
-            <p>{{ sgd.level }}</p>
-            <p>{{ sgd.term }}</p>
-        {% endfor %}
-        {% for sgs in sgs.all %}
-            <br>
-            <h2>{{ sgs.region }}</h2>
-            <p>{{ sgs.level }}</p>
-            <p>{{ sgs.term }}</p>
-        {% endfor %}
-
+        <div class = "local">
+            {% for rg in rg.all %}
+                <div>
+                    <h2>{{ rg.region }}</h2>
+                    <p>{{ rg.level }} 단계</p>
+                    <p>{{ rg.term }}</p>
+                </div>
+            {% endfor %}
+        
+            {% for mc in mc.all %}
+                <div>
+                    <h2>{{ mc.region }}</h2>
+                    <p>{{ mc.level }} 단계</p>
+                    <p>{{ mc.term }}</p>
+                </div>
+            {% endfor %}
+        
+            {% for do in do.all %}
+                <div>
+                    <h2>{{ do.region }}</h2>
+                    <p>{{ do.level }} 단계</p>
+                    <p>{{ do.term }}</p>
+                </div>
+            {% endfor %}
+            {% for sgd in sgd.all %}
+                <div>
+                    <h2>{{ sgd.region }}</h2>
+                    <p>{{ sgd.level }} 단계</p>
+                    <p>{{ sgd.term }}</p>
+                </div>
+            {% endfor %}
+            {% for sgs in sgs.all %}
+                <div>
+                    <h2>{{ sgs.region }}</h2>
+                    <p>{{ sgs.level }} 단계</p>
+                    <p>{{ sgs.term }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
