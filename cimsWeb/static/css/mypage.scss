@@ -4,11 +4,42 @@
     font-weight: normal;
     font-style: normal;
 }
+$font-family: 'IBMPlexSansKR-Regular';
+$container-width: 90%;
+$border-radius: 35px;
+$element-count: 3;
+
+.header {
+    padding-left: 130vh;
+    padding-right: 20vh;
+    width: 20%;
+    margin: 0;
+    display: grid;
+    place-items: center;
 
 
-header {
-    display: flex;
-    justify-content: center;
+    ul {
+        position: relative;
+        width: $container-width;
+        height: 40px;
+        display: grid;
+        grid-template-columns: repeat($element-count, 1fr);
+
+        li {
+            list-style: none;
+            margin-top: 10px;
+            display: grid;
+            place-items: center;
+            font-family: 'IBMPlexSansKR-Regular';
+            color: darkgray;
+            cursor: pointer;
+
+        }
+
+        li:hover {
+            color: darkblue;
+        }
+    }
 }
 
 form {
@@ -101,7 +132,7 @@ input[type=submit] {
 #delete {
     background-color: #aaa;
     width: 30%;
-    margin-top: 60%;
+    margin-top: 50%;
     
 }
 
